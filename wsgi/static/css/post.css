@@ -1,0 +1,48 @@
+body {
+	margin: 0 25%;
+	/*width: 80em;*/
+}
+
+article {
+	text-align: justify;
+}
+
+nav ul {
+	margin: 0;
+	padding: 0;
+}
+
+nav li {
+	display: inline-block;
+	max-width: 40%;
+}
+
+nav li:first-child{
+	float: left;
+}
+
+nav li:last-child{
+	float: right;
+}
+
+footer {
+	clear: both;
+	text-align: center;
+	font-size: 0.9;
+	padding-top: 1em;
+	color: gray;
+}
+
+article h1 {
+	/*font-family: 'Cutive', cursive;*/
+	/*font-family: 'Abril Fatface', cursive;*/
+	margin: 0.5em 0;
+	font-family: 'Abril Fatface', cursive;
+	letter-spacing: 0.05em;
+	font-size: 3rem;
+	font-weight: normal;
+}
+body {
+	font-size: 1.4rem;
+	font-family: 'Noto Serif', serif;
+}

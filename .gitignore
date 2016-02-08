@@ -1,0 +1,8 @@
+*.pyc
+*.pyo
+*~
+
+config.json
+config.ini
+
+data/
