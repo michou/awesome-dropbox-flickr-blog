@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Administrative view</title>
+	% include('components/analytics.tpl')
 </head>
 <body>
 	<h1>Administrator page</h1>

@@ -1,0 +1,1 @@
+<footer>© Mihai Balan, 2016</footer>

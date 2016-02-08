@@ -1,7 +1,7 @@
 from bottle import TEMPLATE_PATH
 from bottle import Bottle
 from bottle import static_file, template
-from bottle import request, response, redirect
+from bottle import request, response, redirect, abort
 
 from envutils import set_local_or_prod
 
@@ -28,16 +28,16 @@ app.database = PostsDatabase(os.path.join(CONTENT_PATH, 'posts.json'))
 def serve_static(path):
 	return static_file(path, STATIC_PATH)
 
-@app.route('/')
+@app.route('/bumper')
 def bumper():
 	return template('bumper.tpl')
 
-@app.route('/posts')
+@app.route('/')
 def posts_index():
 	posts = app.database.get_all_posts()
 	if not posts:
 		# nothing to display, go back to bumper page
-		redirect('/')
+		redirect('/bumper')
 	else:
 		latest_post = posts[0]
 		print latest_post
@@ -46,6 +46,8 @@ def posts_index():
 @app.route('/posts/<post_path>')
 def single_post(post_path):
 	post = app.database.find_post(post_path)
+	if not post:
+		abort(404)
 	previous, next = app.database.get_next_prev(post_path)
 	return template('posts/single.tpl',
 			body=open(os.path.join(CONTENT_PATH, post_path)),
@@ -53,20 +55,6 @@ def single_post(post_path):
 			next=next,
 			title=post.title
 		)
-
-
-@app.route('/posts/<which:path>')
-def render_post(which):
-	composed_path = os.path.realpath(os.path.join(CONTENT_PATH, which))
-	print which
-	print composed_path
-	print CONTENT_PATH
-	
-	if composed_path.startswith(CONTENT_PATH):
-		print "Returning: " + composed_path
-		return static_file(composed_path, root = "/")
-	else:
-		abort(404, "Bad path: " + which)
 
 @app.route('/admin')
 def render_admin():
@@ -100,4 +88,4 @@ def admin_reload_posts():
 
 @app.error(404)
 def error_not_found(error):
-	return "<h1>Nothing to see here, move along!</h1>"
+	return template('errors/404.tpl')
