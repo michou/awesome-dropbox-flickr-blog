@@ -30,7 +30,9 @@ class PostFetcher(object):
 			else:
 				has_more = False
 
-	def fetch_all(self):
+	def fetch_all(self, purge=False):
+		if purge:
+			self.database.purge()
 		for post in self.get_list():
 			stored_post = self.database.find_post(post.name)
 			if stored_post:

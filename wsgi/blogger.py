@@ -83,7 +83,9 @@ def admin_reload_posts():
 	from fetch_posts import PostFetcher
 
 	fetcher = PostFetcher(app.conf, app.database, CONTENT_PATH)
-	fetcher.fetch_all()
+	with_cleanup = bool(request.forms.purge_database)
+	fetcher.fetch_all(with_cleanup)
+
 	return "Posts refreshed, check home page"
 
 @app.error(404)

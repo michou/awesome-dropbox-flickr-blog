@@ -31,8 +31,12 @@
 
 	<h3>Actions</h3>
 	<form action="/admin/fetch/posts" method="post">
-		<button>Refresh blog posts</button>
+		<div>
+			<input type="checkbox" name="purge_database" id="purge_database"><label for="purge_database">Drop existing DB</label>
+		</div>
+		<div>
+			<button>Refresh blog posts</button>
+		</div>
 	</form>
-	<button>Refresh photos</button>
 </body>
 </html>

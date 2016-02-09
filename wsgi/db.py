@@ -76,6 +76,5 @@ class PostsDatabase(object):
 					)
 		return (None, None)
 
-
-	def flush(self):
-		self.posts.purge_tables()
+	def purge(self):
+		self.posts.purge()
