@@ -88,6 +88,14 @@ def admin_reload_posts():
 
 	return "Posts refreshed, check home page"
 
+@app.get('/sync')
+def dropbox_webhook_echo():
+	return request.query.get('challenge')
+
+@app.post('/sync')
+def dropbox_webhook_handler():
+	return request.data
+
 @app.error(404)
 def error_not_found(error):
 	return template('errors/404.tpl')
