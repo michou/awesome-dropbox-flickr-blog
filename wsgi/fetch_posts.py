@@ -35,13 +35,18 @@ class PostFetcher(object):
 			self.database.purge()
 		for post in self.get_list():
 			stored_post = self.database.find_post(post.name)
+			print post.name
 			if stored_post:
+				print 'Found post'
+				print '%s <-> %s' % (stored_post.checksum, post.rev)
+
 				if stored_post.checksum == post.rev:
 					continue
 				else:
 					final_name = self.download_and_convert(post)
 					self.database.update_post(final_name, post.rev)
 			else:
+				print 'NOT Found post'
 				final_name = self.download_and_convert(post)
 				self.database.add_post(final_name, post.rev)
 
@@ -52,21 +57,10 @@ class PostFetcher(object):
 		print "Downloading %s to %s" % (post.name, temp_file_name)
 		self.dropbox.files_download_to_file(temp_file_name, post.path_lower)
 
-		html_name = os.path.splitext(post.name)[0] + '.html'
+		base_name = os.path.splitext(post.name)[0]
+		html_name = base_name + '.html'
 		md.markdownFromFile(input=temp_file_name, output=os.path.join(self.download_path, html_name))
 
 		os.remove(temp_file_name)
 
-		return html_name
-
-
-if __name__ == '__main__':
-	from localconfig import LocalConfig as Configuration
-	conf = Configuration("../data/config.ini")
-	database = db.PostsDatabase('x.json')
-
-	f = PostFetcher(conf, database, '_temp')
-	f.fetch_all()
-
-	print database.get_all_posts()
-
+		return base_name

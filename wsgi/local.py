@@ -3,7 +3,7 @@
 ################################################################################
 #  ALWAYS RUN FROM PROJECT ROOT, NOT FROM wsgi/ OR FARTHER AWAY
 ################################################################################
-from blogger import app as application
+from blog import app as application
 from bottle import run
 
 if __name__ == '__main__':

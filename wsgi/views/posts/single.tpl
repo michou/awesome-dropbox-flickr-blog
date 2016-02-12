@@ -19,12 +19,12 @@
 		<ul>
 			<li>
 				% if previous:
-				<a href="/posts/{{previous.path}}">&larr; {{previous.title}}</a>
+				<a href="/posts/{{previous.base_path}}">&larr; {{previous.title}}</a>
 				% end
 			</li>
 			<li>
 				% if next:
-				<a href="/posts/{{next.path}}">{{next.title}} &rarr;</a>
+				<a href="/posts/{{next.base_path}}">{{next.title}} &rarr;</a>
 				% end
 			</li>
 		</ul>
