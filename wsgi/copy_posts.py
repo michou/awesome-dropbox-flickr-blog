@@ -38,14 +38,14 @@ class PostSyncer(threading.Thread):
 					_, temp_file_name = tempfile.mkstemp()
 
 					print 'Syncing %s from %s' % (entry.name, self.user)
-					print '\tdownloading to %s' % (temp_file_name, )
+					print '    downloading to %s' % (temp_file_name, )
 					source_dbx.files_download_to_file(temp_file_name, entry.path_lower)
 
 					# TODO implement some sort of file comparison so as not to copy too many files
-					print '\tuploading'
+					print '    uploading'
 					target_dbx.files_upload(open(temp_file_name), '/blog/' + entry.name)
 
-					print '\tremoving %s' % (temp_file_name,)
+					print '    removing %s' % (temp_file_name,)
 					os.remove(temp_file_name)
 
 			token.cursor = result.cursor

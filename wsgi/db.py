@@ -45,13 +45,13 @@ class TokensDatabase(object):
 		existing_token = self.get_token(user_id)
 		query = tinydb.Query()
 		if existing_token:
-			print '\tupdate existing'
+			print '    update existing'
 			self.tokens.update({
 				'token': token,
 				'cursor': cursor
 			}, query['user_id'] == user_id)
 		else:
-			print '\tnew token'
+			print '    new token'
 			self.tokens.insert({
 				'user_id': user_id,
 				'token': token,
