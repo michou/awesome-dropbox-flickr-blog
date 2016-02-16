@@ -43,7 +43,7 @@ class PostSyncer(threading.Thread):
 
 					# TODO implement some sort of file comparison so as not to copy too many files
 					print '    uploading'
-					target_dbx.files_upload(open(temp_file_name), '/blog/' + entry.name)
+					target_dbx.files_upload(open(temp_file_name), '/blog/' + entry.name, mode = dropbox.files.WriteMode('overwrite'))
 
 					print '    removing %s' % (temp_file_name,)
 					os.remove(temp_file_name)
