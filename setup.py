@@ -1,10 +1,8 @@
 from setuptools import setup
 
-setup(name='YourAppName',
-      version='1.0',
-      description='OpenShift App',
-      author='Your Name',
-      author_email='example@example.com',
-      url='http://www.python.org/sigs/distutils-sig/',
-      install_requires=['bottle'],
-     )
+setup(name='Awesome Dropbox Flickr Blog',
+      version='0.1',
+      description='Personal website-cum-(photo)blog based on python, Dropbox and flickr',
+      author='Mihai Balan',
+      author_email='mihai.balan@gmail.com',
+      )

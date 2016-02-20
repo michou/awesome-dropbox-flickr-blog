@@ -1,5 +1,6 @@
 from oauth2client import client, crypt
 
+
 def check_id_token(app, id_token):
     try:
         idinfo = client.verify_id_token(id_token, app.conf.admin.client_id)
@@ -15,6 +16,7 @@ def check_id_token(app, id_token):
     user_email = idinfo['email']
     return user_email == app.conf.admin.admin_email
 
+
 def check_login_cookie(app, req, res):
     cookie_from_token = req.get_cookie(app.conf.admin.cookie_name)
     if cookie_from_token:
@@ -24,6 +26,7 @@ def check_login_cookie(app, req, res):
             res.delete_cookie(app.conf.admin.cookie_name, path=app.conf.admin.cookie_path)
 
     return False
+
 
 def authorize(app, should_redirect=False):
     def outer(callback):
