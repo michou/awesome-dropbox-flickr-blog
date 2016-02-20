@@ -4,6 +4,10 @@ import re
 
 POSTS_TABLE = 'posts'
 TOKENS_TABLE = 'tokens'
+RESOURCES_TABLE = 'resources'
+
+def _init_db(db_path, table_name):
+	return tinydb.TinyDB(db_path).table(table_name)
 
 class BlogPost(object):
 	def __init__(self, base_path, checksum):
@@ -23,11 +27,26 @@ class DropboxToken(object):
 		self.token = token
 		self.cursor = cursor
 
+class ResourcesDatabase(object):
+	def __init__(self, db_path):
+		super(ResourcesDatabase, self).__init__()
+		self.db = _init_db(db_path, RESOURCES_TABLE)
+
+	def get_resource_revision(self, resource_path):
+		resource_query = tinydb.Query()
+		result = self.db.search(resource_query['path'])
+		return result[0]['revision'] if result else None
+
+	def put_resource(self, resource_path, revision):
+		self.db.insert({
+			'path': resource_path,
+			'revision': revision
+			})
+
 class TokensDatabase(object):
-	def __init__(self, local_path):
+	def __init__(self, db_path):
 		super(TokensDatabase, self).__init__()
-		self._db = tinydb.TinyDB(local_path)
-		self.tokens = self._db.table(TOKENS_TABLE)
+		self.tokens = _init_db(db_path, TOKENS_TABLE)
 
 	def get_token(self, user_id):
 		user = tinydb.Query()
@@ -59,14 +78,9 @@ class TokensDatabase(object):
 			})
 
 class PostsDatabase(object):
-	def __init__(self, local_path):
+	def __init__(self, db_path):
 		super(PostsDatabase, self).__init__()
-		self.local_path = local_path
-		self.__init_db__()
-
-	def __init_db__(self):
-		self._db = tinydb.TinyDB(self.local_path)
-		self.posts = self._db.table(POSTS_TABLE)
+		self.posts = _init_db(db_path, POSTS_TABLE)
 
 	def find_post(self, base_path):
 		post_query = tinydb.Query()

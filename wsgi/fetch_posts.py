@@ -50,6 +50,9 @@ class PostFetcher(object):
 				final_name = self.download_and_convert(post)
 				self.database.add_post(final_name, post.rev)
 
+	def fetch_resources(self):
+		pass
+
 			
 	def download_and_convert(self, post):
 		temp_file_handle, temp_file_name = tempfile.mkstemp()
