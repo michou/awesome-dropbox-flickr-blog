@@ -1,0 +1,21 @@
+/
+	/bumper:
+		- initial homepage without any links. Still preserved for bumping reasons (TBD)
+	/static/<path>:
+		- static assets used by main pages. Include CSS, JS and images
+	/posts/<YYYY-MM-DD <post title>>:
+		- actual post page. Renders using 
+	/sync:
+		- enpoint used by Dropbox webhook to collect posts from multiple accounts
+	/admin:
+		- login endpoint for administrative subsection
+	/admin/check:
+		- login destination endpoint. Checks for proper A&A
+	/admin/view:
+		- main admin page. Currently allows syncing of new posts
+	/admin/fetch/posts:
+		- result page for syncing posts
+	/admin/oauth/start:
+		- OAuth2 start endpoint. Allows users to connect with Dropbox in order to collect posts form multiple accounts 
+	/admin/oatuh/done:
+		- OAuth2 success endpoint. This also stores the token in the DB
