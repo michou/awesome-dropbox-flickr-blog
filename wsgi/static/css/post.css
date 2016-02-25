@@ -48,11 +48,8 @@ footer {
 
 article h1 {
 	font-family: 'PT Sans Narrow', sans-serif;
-	/*margin: 0.5em 0;*/
-	letter-spacing: 0.05em;
+	margin-bottom: 0;
 	font-size: 3rem;
-	/*font-weight: black;*/
-	-ms-text-align-last: left;
 	text-align: left;
 }
 body {
