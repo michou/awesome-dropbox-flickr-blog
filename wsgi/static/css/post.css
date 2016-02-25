@@ -1,6 +1,18 @@
 body {
-	margin: 0 25%;
-	/*width: 80em;*/
+	margin: 0 5%;
+	font-size: 16px;
+}
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 768px) {
+	body {
+		margin: 0 10%;
+	}
+}
+
+@media only screen and (min-device-width: 769px) {
+	body {
+		margin: 0 20%;
+	}
 }
 
 article {
@@ -28,25 +40,28 @@ nav li:last-child{
 footer {
 	clear: both;
 	text-align: center;
-	font-size: 0.9;
+	font-size: 0.9rem;
 	padding-top: 1em;
+	padding-bottom: 0.5em;
 	color: gray;
 }
 
 article h1 {
-	/*font-family: 'Cutive', cursive;*/
-	/*font-family: 'Abril Fatface', cursive;*/
-	margin: 0.5em 0;
-	font-family: 'Abril Fatface', cursive;
+	font-family: 'PT Sans Narrow', sans-serif;
+	/*margin: 0.5em 0;*/
 	letter-spacing: 0.05em;
 	font-size: 3rem;
-	font-weight: normal;
+	/*font-weight: black;*/
+	-ms-text-align-last: left;
+	text-align: left;
 }
 body {
 	font-size: 1.4rem;
-	font-family: 'Noto Serif', serif;
+	font-family: 'PT Serif', serif;
 }
 
 img {
     width: 100%;
 }
+
+/* 480, 768, all */
