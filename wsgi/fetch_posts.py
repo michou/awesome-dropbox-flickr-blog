@@ -5,6 +5,12 @@ import tempfile
 
 BLOG_PATH = '/blog'
 RESOURCES_LOCAL_FOLDER = 'res'
+MARKDOWN_EXTENSIONS = [
+    'markdown.extensions.fenced_code',
+    'markdown.extensions.smart_strong'
+    ]
+
+print 'susu'
 
 class PostProcessor(object):
     def __init__(self, posts, dbx, local_path):
@@ -25,7 +31,11 @@ class PostProcessor(object):
 
         base_name = os.path.splitext(entry.name)[0]
         html_name = base_name + '.html'
-        md.markdownFromFile(input=temp_file_name, output=os.path.join(self.local_path, html_name))
+        md.markdownFromFile(
+            input=temp_file_name,
+            output=os.path.join(self.local_path, html_name),
+            extensions=MARKDOWN_EXTENSIONS,
+            safe_mode=False)
 
         os.remove(temp_file_name)
 
