@@ -1,6 +1,43 @@
+html {
+	font-size: 16px;
+}
 body {
 	margin: 0 1em;
-	font-size: 16px;
+	font-size: 1.4rem;
+	font-family: 'PT Serif', serif;
+}
+
+code {
+	font-family: 'Roboto Mono', 'Menlo', 'Ubuntu Mono', 'Courier New', 'Courier', fixed;
+}
+
+code {
+	font-size: 0.85em;
+	background: aliceblue;
+	border: 1px solid gray;
+	border-radius: 0.2em;
+	padding: 0.1em;
+}
+
+pre {
+	width: 100%;
+	overflow: auto;
+	border: 1px solid gray;
+	padding: 0.1em;
+	background: aliceblue;
+}
+
+pre code {
+	border-radius: none;
+	border: none;
+	background: inherit;
+}
+
+blockquote {
+	margin: 0.5em 0;
+	border-left: 0.75em solid lightsteelblue;
+	color: darkslategray;
+	padding-left: 0.5em;
 }
 
 @media only screen and (min-width: 481px) and (max-width: 768px) {
@@ -11,13 +48,18 @@ body {
 
 @media only screen and (min-width: 769px) {
 	body {
-		width: 28em;
+		width: 30em;
 		margin: 0 auto;
 	}
 }
 
 article {
 	text-align: justify;
+}
+
+article ul,
+article ol {
+	margin-top: 0;
 }
 
 nav ul {
@@ -27,7 +69,7 @@ nav ul {
 
 nav li {
 	display: inline-block;
-	max-width: 40%;
+	/*max-width: 40%;*/
 }
 
 nav li:first-child{
@@ -39,23 +81,57 @@ nav li:last-child{
 }
 
 footer {
+	font-family: 'PT Sans', sans-serif;
 	clear: both;
 	text-align: center;
-	font-size: 0.9rem;
+	font-size: 1rem;
 	padding-top: 1em;
 	padding-bottom: 0.5em;
 	color: gray;
 }
 
 article h1 {
+	text-align: left;
 	font-family: 'PT Sans', sans-serif;
 	margin-bottom: 0;
 	font-size: 3rem;
 	text-align: left;
 }
-body {
-	font-size: 1.4rem;
-	font-family: 'PT Serif', serif;
+
+article h2 {
+	text-align: left;
+	font-size: 2em;
+	margin-top: 0.5em;
+	margin-bottom: 0;
+}
+article h3 {
+	text-align: left;
+	font-size: 1.8em;
+	margin-top: 0.5em;
+	margin-bottom: 0;
+}
+article h4 {
+	text-align: left;
+	font-size: 1.6em;
+	margin-top: 0.5em;
+	margin-bottom: 0;
+}
+article h5 {
+	text-align: left;
+	font-size: 1.4em;
+	margin-top: 0.5em;
+	margin-bottom: 0;
+}
+article h6 {
+	text-align: left;
+	font-size: 1.2em;
+	margin-top: 0.5em;
+	margin-bottom: 0;
+	/*font-style: italic;*/
+}
+
+article p {
+	margin: 0.5rem 0 1rem 0;
 }
 
 img {
