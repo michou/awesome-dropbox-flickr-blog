@@ -4,7 +4,7 @@ html {
 body {
 	margin: 0 1em;
 	font-size: 1.4rem;
-	font-family: 'PT Serif', serif;
+	font-family: 'Alegreya', serif;
 }
 
 code {
@@ -62,40 +62,23 @@ article ol {
 	margin-top: 0;
 }
 
-nav ul {
-	margin: 0;
-	padding: 0;
-}
-
-nav li {
-	display: inline-block;
-	/*max-width: 40%;*/
-}
-
-nav li:first-child{
-	float: left;
-}
-
-nav li:last-child{
-	float: right;
-}
-
-footer {
-	font-family: 'PT Sans', sans-serif;
-	clear: both;
-	text-align: center;
-	font-size: 1rem;
-	padding-top: 1em;
-	padding-bottom: 0.5em;
-	color: gray;
-}
 
 article h1 {
 	text-align: left;
-	font-family: 'PT Sans', sans-serif;
+	font-family: 'Alegreya Sans SC', sans-serif;
+	font-weight: 500;
 	margin-bottom: 0;
 	font-size: 3rem;
 	text-align: left;
+}
+
+article h2,
+article h3,
+article h4,
+article h5,
+article h6 {
+	font-family: 'Alegreya Sans', sans-serif;
+	font-weight: 400;
 }
 
 article h2 {
@@ -121,12 +104,14 @@ article h5 {
 	font-size: 1.4em;
 	margin-top: 0.5em;
 	margin-bottom: 0;
+	font-weight: 500;
 }
 article h6 {
 	text-align: left;
 	font-size: 1.2em;
 	margin-top: 0.5em;
 	margin-bottom: 0;
+	font-weight: 500;
 	/*font-style: italic;*/
 }
 
@@ -136,6 +121,35 @@ article p {
 
 img {
     width: 100%;
+}
+
+
+nav ul {
+	margin: 0;
+	padding: 0;
+}
+
+nav li {
+	display: inline-block;
+	/*max-width: 40%;*/
+}
+
+nav li:first-child{
+	float: left;
+}
+
+nav li:last-child{
+	float: right;
+}
+
+footer {
+	font-family: 'Alegreya Sans SC', sans-serif;
+	clear: both;
+	text-align: center;
+	font-size: 1rem;
+	padding-top: 1em;
+	padding-bottom: 0.5em;
+	color: gray;
 }
 
 /* 480, 768, all */
