@@ -81,7 +81,7 @@ def admin_response():
         redirect('/admin/view')
     else:
         # HACK HACK HACK We redirect to a bad page and display the 404 message
-        redirect('/forbidden')
+        abort(403)
 
 
 @auth_util.authorize(app, should_redirect=True)
@@ -93,8 +93,8 @@ def admin_view():
         redirect('/admin')
 
 
-@auth_util.authorize(app, should_redirect=True)
 @app.post('/admin/fetch/posts')
+@auth_util.authorize(app, should_redirect=True)
 def admin_reload_posts():
     from fetch_posts import DropboxFetcher
 
@@ -103,25 +103,6 @@ def admin_reload_posts():
     fetcher.fetch_all(with_cleanup)
 
     return "Posts refreshed, check home page"
-
-
-@app.get('/sync')
-def dropbox_webhook_echo():
-    return request.query.get('challenge')
-
-
-@app.post('/sync')
-def dropbox_webhook_handler():
-    import copy_posts
-
-    if dropbox_utils.check_dropbox_webhook_signature(request, app.conf.dropbox.client_secret):
-        for account in request.json['list_folder']['accounts']:
-            copy_posts.PostSyncer(app.conf, app.tokens, account).start()
-
-        return '{"result": "ok"}'
-    else:
-        abort(403)
-
 
 @app.get('/admin/oauth/start')
 def dropbox_oauth_start():
@@ -152,7 +133,33 @@ def dropbox_oauth_complete():
 
     return 'Hi %s!' % (user_id)
 
+@app.get('/sync')
+def dropbox_webhook_echo():
+    return request.query.get('challenge')
+
+
+@app.post('/sync')
+def dropbox_webhook_handler():
+    import copy_posts
+
+    if dropbox_utils.check_dropbox_webhook_signature(request, app.conf.dropbox.client_secret):
+        for account in request.json['list_folder']['accounts']:
+            copy_posts.PostSyncer(app.conf, app.tokens, account).start()
+
+        return '{"result": "ok"}'
+    else:
+        abort(403)
 
 @app.error(404)
 def error_not_found(error):
     return template('errors/404.tpl')
+
+@app.error(403)
+def error_not_found(error):
+    return template('errors/403.tpl')
+
+@app.error(405)
+@app.error(400)
+def error_bad_request(error):
+    return template('errors/400.tpl')
+

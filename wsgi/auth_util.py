@@ -40,5 +40,5 @@ def authorize(app, should_redirect=False):
                     abort(403, '{"error": "invalid_credentials"}')
             else:
                 return callback(*args, **kwargs)
-
+        return wrap_func
     return outer
