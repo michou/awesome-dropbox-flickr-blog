@@ -11,7 +11,11 @@
 		<h1>Mihai Balan</h1>
 		<h2>Thoughts <em>&</em> images</h2>
 	</header> -->
-
+	<header>
+		<h1>Mihai Balan</h1>
+		<!-- <h2>.*</h2> -->
+		<h2>.info</h2>
+	</header>
 	<article>
 		{{!body.read()}}
 	</article>

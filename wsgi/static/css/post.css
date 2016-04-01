@@ -4,7 +4,7 @@ html {
 body {
 	margin: 0 1em;
 	font-size: 1.4rem;
-	font-family: 'PT Serif', serif;
+	font-family: "PT Serif";
 }
 
 code {
@@ -80,6 +80,7 @@ nav li:last-child{
 	float: right;
 }
 
+
 footer {
 	font-family: 'PT Serif', serif;
 	clear: both;
@@ -149,3 +150,53 @@ img {
 }
 
 /* 480, 768, all */
+
+body {
+	color: #2B3A42;
+	font-family: "PT Sans";
+}
+
+header > h1 {
+	display: inline-block;
+	font-family: "PT Sans", sans-serif;
+	font-weight: 900;
+	font-size: 3em;
+}
+
+header > h2 {
+	font-family: "PT Sans";
+	font-size: 3em;
+	display: inline-block;
+	font-weight: 300;
+	color: #FF530D;
+}
+
+header {
+	/*text-align: center;*/
+}
+header > h1,
+header > h2 {
+	margin-bottom: 0;
+	margin-top: .5em;
+}
+
+article > h1 {
+	font-family: "PT Sans Narrow";
+	font-weight: 700;
+}
+
+article h2,
+article h3,
+article h4,
+article h5,
+article h6 {
+	font-family: 'PT Sans Narrow', sans-serif;
+	font-weight: 200;
+}
+
+article h5,
+article h6 {
+	font-weight: 700;
+	color: #3F5765
+}
+/* 2B3A42 / 3F5765 / BDD4DE / EFEFEF / FF530D  */
