@@ -17,16 +17,16 @@
 	</article>
 	<nav>
 		<ul>
-			<li>
-				% if previous:
-				<a href="/posts/{{previous.base_path}}">&larr;&nbsp;{{previous.title}}</a>
-				% end
+			% if previous:
+			<li class="previous">
+				<a href="/posts/{{previous.base_path}}">{{previous.title}}</a>
 			</li>
-			<li>
-				% if next:
-				<a href="/posts/{{next.base_path}}">{{next.title}}&nbsp;&rarr;</a>
-				% end
+			% end
+			% if next:
+			<li class="next">
+				<a href="/posts/{{next.base_path}}">{{next.title}}</a>
 			</li>
+			% end
 		</ul>
 	</nav>
 	% include('components/footer.tpl')

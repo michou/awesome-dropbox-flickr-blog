@@ -56,12 +56,13 @@ article h4,
 article h5,
 article h6 {
 	margin-top: 0.5rem;
-	margin-bottom: 0;
+	margin-bottom: 1.5rem;
 
 	font-family: 'Alegreya', serif;
 	font-weight: 700;
 
 	text-align: left;
+	line-height: 1.1;
 }
 
 /* I'm using a 1.1 scale, but starting from the top down, h1 > h6 > p */
@@ -107,7 +108,7 @@ article a::after {
 }
 
 article img {
-    width: 100%;
+	width: 100%;
 }
 
 article code {
@@ -150,6 +151,12 @@ article ol {
 	margin-top: 0;
 }
 
+nav a {
+	text-decoration: none;
+	font-weight: 700;
+	color: #729fcf;
+}
+
 nav ul {
 	margin: 0;
 	padding: 0;
@@ -159,15 +166,24 @@ nav li {
 	display: inline-block;
 }
 
-nav li:first-child{
+nav li.previous{
 	float: left;
 }
 
-nav li:last-child{
+nav li.previous a::before {
+	content: "« ";
+}
+
+nav li.next{
 	float: right;
 }
 
+nav li.next a::after {
+	content: " »";
+}
+
 footer {
+	font-size: 1.15rem;
 	clear: both;
 	text-align: center;
 	padding-top: 1em;
@@ -177,9 +193,56 @@ footer {
 
 /* 480, 768, all */
 
+@media only screen and (max-width: 480px) {
+	body {
+		margin: 0 1em;
+		font-size: 1.5rem;
+	}
+	header > h1 {
+		font-size: 3.5rem;
+	}
+
+	article {
+		text-align: left;
+	}
+
+	article h1,
+	article h2,
+	article h3,
+	article h4,
+	article h5,
+	article h6 {
+		font-weight: 900;
+		margin-bottom: 1rem;
+		line-height: 1.2;
+	}
+
+	article h1 {
+		font-size: 2.47rem;
+		line-height: 1.1;
+	}
+
+	article h2 {
+		font-size: 2.25rem;
+	}
+	article h3 {
+		font-size: 2.04rem;
+	}
+	article h4 {
+		font-size: 1.86rem;
+	}
+	article h5 {
+		font-size: 1.69rem;
+	}
+	article h6 {
+		font-size: 1.69rem;
+		color: gray;
+	}
+}
+
 @media only screen and (min-width: 481px) and (max-width: 768px) {
 	body {
-		margin: 0 2em;
+		margin: 0 2rem;
 	}
 }
 
@@ -188,4 +251,5 @@ footer {
 		width: 25em;
 		margin: 0 auto;
 	}
+	/*TODO: What about columns?*/
 }
