@@ -1,60 +1,148 @@
+/*
+black: 2e3436;
+red: ef2929 / a40000;
+orange: f57900;
+blue: 729fcf / 204a87 / 3465a4;
+green: 73d216;
+light gray: eeeeec / d3d7cf;
+gray: 555753;
+*/
+
 html {
 	font-size: 16px;
 }
+
 body {
 	margin: 0 1em;
-	font-size: 1.4rem;
-	font-family: "PT Serif";
+	color: #2e3436;
+	font-family: "Alegreya Sans", sans-serif;
+	font-size: 1.69rem;
+	font-weight: 400;
 }
 
-code {
-	font-family: 'Roboto Mono', 'Menlo', 'Ubuntu Mono', 'Courier New', 'Courier', fixed;
+header {
+	text-align: center;
 }
 
-code {
-	font-size: 0.85em;
-	background: aliceblue;
-	border: 1px solid gray;
-	border-radius: 0.2em;
-	padding: 0.1em;
+header > h1 {
+	font-family: "Alegreya Sans", sans-serif;
+	font-weight: 100;
+	font-size: 5rem;
+	margin-top: .25em;
+	margin-bottom: 0;
 }
 
-pre {
-	width: 100%;
-	overflow: auto;
-	border: 1px solid gray;
-	padding: 0.1em;
-	background: aliceblue;
+header > h1::after {
+	content: ".*";
+	color: #ef2929;
+	font-weight: 500;
 }
 
-pre code {
-	border-radius: none;
-	border: none;
-	background: inherit;
-}
-
-blockquote {
-	margin: 0.5em 0;
-	border-left: 0.75em solid lightsteelblue;
-	color: darkslategray;
-	padding-left: 0.5em;
-}
-
-@media only screen and (min-width: 481px) and (max-width: 768px) {
-	body {
-		margin: 0 2em;
-	}
-}
-
-@media only screen and (min-width: 769px) {
-	body {
-		width: 30em;
-		margin: 0 auto;
-	}
+header > h1 > a {
+	color: inherit;
+	text-decoration: none;
 }
 
 article {
 	text-align: justify;
+
+	font-size: 1.69rem;
+}
+
+article h1,
+article h2,
+article h3,
+article h4,
+article h5,
+article h6 {
+	margin-top: 0.5rem;
+	margin-bottom: 0;
+
+	font-family: 'Alegreya', serif;
+	font-weight: 700;
+
+	text-align: left;
+}
+
+/* I'm using a 1.1 scale, but starting from the top down, h1 > h6 > p */
+
+article h1 {
+	font-size: 3rem;
+	line-height: 1.1;
+}
+
+article h2 {
+	font-size: 2.72rem;
+}
+article h3 {
+	font-size: 2.47rem;
+}
+article h4 {
+	font-size: 2.25rem;
+}
+article h5 {
+	font-size: 2.04rem;
+}
+article h6 {
+	font-size: 1.86rem;
+}
+
+article p {
+	/*margin: 0.5rem 0 1rem 0;*/
+	margin-top: .25em;
+	margin-bottom: .75em;
+}
+
+article a {
+	text-decoration: none;
+	color: #729fcf;
+}
+
+article a::after {
+	color: #73d216;
+	content: "➚";
+	font-size: 75%;
+	position: relative;
+	bottom: .1em;
+}
+
+article img {
+    width: 100%;
+}
+
+article code {
+	font-family: 'Roboto Mono', 'Menlo', 'Ubuntu Mono', 'Courier New', 'Courier', fixed;
+}
+
+article code {
+	font-size: 1.27rem;
+	background: #eeeeec;
+	border: 1px solid gray;
+	border-radius: 0.2em;
+	padding: 0 0.1em 0 0.1em;
+}
+
+article pre {
+	width: 100%;
+	overflow: auto;
+	border: 1px solid gray;
+	/*padding: 0.1em;*/
+	background: #eeeeec;
+}
+
+article pre code {
+	border: none;
+	background: inherit;
+	font-size: 1.15rem;
+}
+
+article blockquote {
+	font-family: "Alegreya", serif;
+	font-weight: 400;
+	margin: 0.5em 0;
+	border-left: 0.75em solid #729fcf;
+	color: #204a87;
+	padding-left: 0.5em;
 }
 
 article ul,
@@ -69,7 +157,6 @@ nav ul {
 
 nav li {
 	display: inline-block;
-	/*max-width: 40%;*/
 }
 
 nav li:first-child{
@@ -80,130 +167,25 @@ nav li:last-child{
 	float: right;
 }
 
-
 footer {
-	font-family: 'PT Serif', serif;
 	clear: both;
 	text-align: center;
-	font-size: 1rem;
 	padding-top: 1em;
 	padding-bottom: 0.5em;
 	color: gray;
 }
 
-article h2,
-article h3,
-article h4,
-article h5,
-article h6 {
-	font-family: 'PT Sans Narrow', sans-serif;
-	font-weight: 700;
-}
-
-
-article h1 {
-	text-align: left;
-	font-family: 'PT Sans', sans-serif;
-	margin-bottom: 0;
-	font-size: 3rem;
-	text-align: left;
-}
-
-article h2 {
-	text-align: left;
-	font-size: 2em;
-	margin-top: 0.5em;
-	margin-bottom: 0;
-}
-article h3 {
-	text-align: left;
-	font-size: 1.8em;
-	margin-top: 0.5em;
-	margin-bottom: 0;
-}
-article h4 {
-	text-align: left;
-	font-size: 1.6em;
-	margin-top: 0.5em;
-	margin-bottom: 0;
-}
-article h5 {
-	text-align: left;
-	font-size: 1.4em;
-	margin-top: 0.5em;
-	margin-bottom: 0;
-}
-article h6 {
-	text-align: left;
-	font-size: 1.2em;
-	margin-top: 0.5em;
-	margin-bottom: 0;
-	/*font-style: italic;*/
-}
-
-article p {
-	margin: 0.5rem 0 1rem 0;
-}
-
-img {
-    width: 100%;
-}
-
 /* 480, 768, all */
 
-body {
-	color: #2B3A42;
-	font-family: "PT Sans";
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+	body {
+		margin: 0 2em;
+	}
 }
 
-header > h1 {
-	display: inline-block;
-	font-family: "PT Sans", sans-serif;
-	font-weight: 900;
-	font-size: 3em;
+@media only screen and (min-width: 769px) {
+	body {
+		width: 25em;
+		margin: 0 auto;
+	}
 }
-
-header > h2 {
-	font-family: "PT Sans";
-	font-size: 3em;
-	display: inline-block;
-	font-weight: 300;
-	color: #FF530D;
-}
-
-header {
-	/*text-align: center;*/
-}
-header > h1,
-header > h2 {
-	margin-bottom: 0;
-	margin-top: .5em;
-}
-
-article > h1 {
-	font-family: "Roboto Slab";
-	font-weight: 300;
-}
-
-article h2,
-article h3,
-article h4,
-article h5,
-article h6 {
-	font-family: 'Roboto Slab', sans-serif;
-	font-weight: 100;
-}
-
-article h5,
-article h6 {
-	/*font-weight: 700;*/
-	/*color: #3F5765*/
-}
-/* 2B3A42 / 3F5765 / BDD4DE / EFEFEF / FF530D  */
-/*
-black: 2e3436;
-red: a40000;
-orange: f57900;
-blue: 204a87 / 3465a4;
-green: 73d216;
-*/

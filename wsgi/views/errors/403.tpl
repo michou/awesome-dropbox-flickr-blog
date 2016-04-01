@@ -7,6 +7,7 @@
 	% include('components/analytics.tpl')
 </head>
 <body>
+	% include('components/header.tpl')
 	<article>
 		<h1>Eroare</h1>
 		<blockquote>
