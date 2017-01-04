@@ -240,7 +240,7 @@ footer {
 	}
 }
 
-.videobox {
+.rebox {
 	position: relative;
 	padding-bottom: 56.25%;
 	/* that's 9/16 in percentages. This will yield black bars if the video
@@ -249,7 +249,7 @@ footer {
 	height: 0;
 }
 
-.videobox iframe {
+.rebox iframe {
 	position: absolute;
 	top: 0;
 	left: 0;
