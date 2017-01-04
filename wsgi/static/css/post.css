@@ -240,6 +240,23 @@ footer {
 	}
 }
 
+.videobox {
+	position: relative;
+	padding-bottom: 56.25%;
+	/* that's 9/16 in percentages. This will yield black bars if the video
+	has a different ratio */
+	padding-top: 25px;
+	height: 0;
+}
+
+.videobox iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
 @media only screen and (min-width: 481px) and (max-width: 768px) {
 	body {
 		margin: 0 2rem;
