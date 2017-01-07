@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
 	<link href="https://fonts.googleapis.com/css?family=Alegreya+Sans:100,100i,400,400i,700,700i,900,900i|Alegreya:400,400i,700,700i,900,900i&amp;subset=latin-ext" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i|Source+Serif+Pro:400,600,700&amp;subset=latin-ext" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Anonymous+Pro:400,400i,700,700i|Raleway:100,100i,200,200i,300,300i,400,400i,700,700i,900,900i|Roboto+Condensed:300,300i,400,400i,700,700i|Roboto+Slab:100,300,400,700&amp;subset=latin-ext" rel="stylesheet">
 	<meta charset="UTF-8">
 	<title>Document</title>
 	<style>
@@ -19,6 +21,7 @@
 	header h1 {
 		margin: 0;
 		font-size: 2.8561rem;
+		background-image: linear-gradient(to bottom, white, white 60%, lightgray 60%, lightgray 95%, white 95%)
 		/*letter-spacing: 0.05em;*/
 	}
 	header h1::after {
@@ -43,7 +46,7 @@
 	header nav li a:hover {
 		color: inherit;
 		text-decoration: none;
-		background-image: linear-gradient(to bottom, white, white 60%, lightgray 60%, lightgray 85%, white 85%)
+		background-image: linear-gradient(to bottom, white, white 60%, lightgray 60%, lightgray 100%);
 	}
 	header nav li::before {
 		content: ". ";
@@ -51,16 +54,20 @@
 	}
 
 	/* ----------------------- Font faces ------------------------------------*/
-	header {
-		font-family: "Alegreya Sans";
+	header,
+	header h1 {
+		/*font-family: "Alegreya Sans";*/
+		font-family: "Raleway";
 		font-weight: 900;
 	}
 	h1, h2, h3, h4, h5, h6 {
-		font-family: "Alegreya Sans";
+		/*font-family: "Alegreya Sans";*/
+		font-family: "Raleway";
 		font-weight: 900;
 	}
-	p {
-		font-family: "Alegreya Sans";
+	p, q, blockquote {
+		/*font-family: "Alegreya Sans";*/
+		font-family: "Raleway";
 	}
 	/* ----------------------- Scale  ----------------------------------------*/
 	header, p, h1, h2, h3, h4, h5, h6 {
@@ -97,6 +104,37 @@
 		font-size: 1rem;
 		font-weight: 700;
 	}
+	blockquote {
+		/*font-style: italic;*/
+		font-weight: 200;
+		font-size: 1rem;
+		margin: 0 2em;
+		padding-left: 1em;
+		margin-top: 1em;
+		position: relative;
+		/*border-left: 1rem solid lightblue;*/
+	}
+	blockquote::before {
+		content:"„";
+		color: lightblue;
+		font-size: 4rem;
+		font-weight: 900;
+		position: absolute;
+		left: -0.5rem;
+		/*top: -1rem;*/
+		bottom: -1rem;
+		z-index: -10;
+	}
+	blockquote::after {
+		content:"”";
+		color: lightblue;
+		font-size: 4rem;
+		font-weight: 900;
+		position: absolute;
+		right: 1rem;
+		top: -1rem;
+		z-index: -10;
+	}
 	</style>
 </head>
 <body>
@@ -112,7 +150,11 @@
 		</nav>
 	</header>
 	<h1>Header number 1</h1>
-	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis consequuntur doloremque similique repellendus possimus eveniet velit quae delectus, obcaecati veritatis natus laboriosam sint mollitia, odit modi ipsa ut beatae nemo id numquam architecto at expedita? Totam eaque, vel illo corrupti delectus repellat aliquid. Quas iure, molestiae corrupti, modi placeat itaque eaque porro minima sequi, aliquam, voluptatum nisi quo. Voluptates laboriosam officia amet ipsam quae pariatur, veritatis quo dignissimos asperiores consequuntur eos laudantium nihil vitae, magni. Maiores asperiores facere neque beatae, reprehenderit temporibus est eaque nihil pariatur veritatis aut. Animi sint, eos sapiente vel adipisci saepe sit provident. Alias, unde, animi!</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis consequuntur doloremque similique repellendus possimus eveniet velit quae delectus, obcaecati veritatis natus laboriosam sint mollitia, odit modi ipsa ut beatae nemo id numquam architecto at expedita? Totam eaque, vel illo corrupti delectus repellat aliquid.</p>
+	<blockquote>
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque asperiores esse perspiciatis deleniti labore, dolorum ex expedita sapiente ratione, dicta, error et animi cum quibusdam eius totam pariatur tempore omnis!
+	</blockquote>
+	<p>Quas iure, molestiae corrupti, modi placeat itaque eaque porro minima sequi, aliquam, voluptatum nisi quo. Voluptates laboriosam officia amet ipsam quae pariatur, veritatis quo dignissimos asperiores consequuntur eos laudantium nihil vitae, magni. Maiores asperiores facere neque beatae, reprehenderit temporibus est eaque nihil pariatur veritatis aut. Animi sint, eos sapiente vel adipisci saepe sit provident. Alias, unde, animi!</p>
 	<p>Culpa explicabo commodi animi repellat rerum debitis earum quaerat, deserunt quasi modi quos ipsum quam similique id velit ut praesentium. Qui atque voluptates molestias alias in ipsa tenetur accusamus, velit hic expedita, sint. Dolore sapiente ut quos quae incidunt eligendi, pariatur asperiores, dolorem blanditiis, beatae est unde. Nostrum temporibus, esse molestiae neque quaerat! Possimus, cum. Laudantium corporis voluptatem nihil placeat quae voluptatum vel sequi odio quia, assumenda culpa quis repudiandae et quo tempora a nesciunt, ratione accusamus illum nulla aspernatur? Minus, facilis tempora fugiat impedit ex deleniti at praesentium numquam. Aliquam praesentium minima, at aperiam cumque eaque iste dolorum temporibus.</p>
 	<h2>Header number 2</h2>
 	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam perspiciatis dicta, molestiae mollitia deleniti, ad quaerat voluptas, accusantium maiores beatae tempora aperiam obcaecati impedit hic vero esse! Maiores incidunt aut excepturi quia, reprehenderit suscipit, tenetur sed dolore distinctio, eveniet veritatis. Voluptate est ut, fugit ad dolor nesciunt assumenda accusamus facilis natus. Veniam corporis animi quam optio explicabo officiis officia eum ipsam natus ducimus et qui, dicta modi ut quia enim soluta id reprehenderit earum dolore, provident aliquam inventore! Nam quasi porro eius ducimus blanditiis ut eligendi sapiente dolorem illum dolores officia veniam accusantium fugiat fuga saepe, enim eveniet sed. Excepturi?</p>
