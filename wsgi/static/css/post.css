@@ -185,7 +185,8 @@ blockquote::before {
 	top: -0.2em;
 }
 
-article img {
+article img,
+article video {
 	width: 100%;
 }
 

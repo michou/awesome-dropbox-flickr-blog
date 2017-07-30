@@ -66,11 +66,11 @@ class ImageProcessor(object):
         self.dropbox = dbx
         self.local_path = local_path
 
-        self.IMAGE_EXTENSIONS = ['.gif', '.png', '.jpg', '.jpeg']
+        self.RESOURCE_EXTENSIONS = ['.gif', '.png', '.jpg', '.jpeg', '.mp4', '.ogm', '.svg']
 
     def matches(self, dropbox_entry):
         extension = os.path.splitext(dropbox_entry.name)[1].lower()
-        return isinstance(dropbox_entry, dropbox.files.FileMetadata) and extension in self.IMAGE_EXTENSIONS
+        return isinstance(dropbox_entry, dropbox.files.FileMetadata) and extension in self.RESOURCE_EXTENSIONS
 
     def process(self, dropbox_entry):
         """
