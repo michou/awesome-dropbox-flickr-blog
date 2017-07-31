@@ -80,10 +80,12 @@ class ImageProcessor(object):
         :return:
         """
         asset_revision = self.images.get_resource_revision(dropbox_entry.path_lower)
-        if not asset_revision:
-            resources_folder = os.path.join(self.local_path, RESOURCES_LOCAL_FOLDER)
-            if not os.path.exists(resources_folder):
-                os.mkdir(resources_folder)
+        resources_folder = os.path.join(self.local_path, RESOURCES_LOCAL_FOLDER)
+
+        if not os.path.exists(resources_folder):
+            os.mkdir(resources_folder)
+
+        if (not asset_revision) or (dropbox_entry.rev != asset_revision):
             local_file_name = os.path.join(resources_folder, dropbox_entry.name)
             self.dropbox.files_download_to_file(local_file_name, dropbox_entry.path_lower)
             self.images.put_resource(dropbox_entry.path_lower, dropbox_entry.rev)
