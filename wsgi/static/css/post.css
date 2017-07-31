@@ -144,15 +144,16 @@ article a:hover {
 	border-bottom: 0.1em solid;
 }
 
+.prism article code,
 article code {
-	font-family: 'Anonymous Pro', 'Menlo', 'Ubuntu Mono', 'Courier New', 'Courier', fixed;
+	font-family: 'Anonymous Pro', 'Menlo', 'Consolas', 'Ubuntu Mono', 'Courier New', 'Courier', fixed;
 }
 
 article code {
 	background: #eeeeec;
 	border: 1px solid gray;
 	border-radius: 0.2em;
-	padding: 0 0.5em;
+	padding: 0.1em 0.1em;
 }
 
 article pre {
@@ -165,6 +166,15 @@ article pre {
 article pre code {
 	border: none;
 	background: inherit;
+}
+
+.prism article pre code {
+	font-size: 0.8rem;
+}
+.prism article pre {
+	width: 100%;
+	box-sizing: border-box;
+	padding: 0.1em 0.3em;
 }
 
 blockquote {
